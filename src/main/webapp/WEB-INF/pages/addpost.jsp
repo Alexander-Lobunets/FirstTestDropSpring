@@ -12,7 +12,7 @@
     <title></title>
 </head>
 <body>
-<h2>Student Information</h2>
+<h2>Post Information</h2>
 <form:form method="POST" action="/SpringMVC/addPost">
   <table>
     <tr>
