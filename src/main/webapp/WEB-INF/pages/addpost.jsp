@@ -27,10 +27,10 @@
       <td><form:label path="username">Username</form:label></td>
       <td><form:input path="username" /></td>
     </tr>
-    <tr>
-      <td><form:label path="postDate">Postdate</form:label></td>
-      <td><form:input path="postDate" /></td>
-    </tr>
+    <%--<tr>--%>
+      <%--<td><form:label path="postDate">Postdate</form:label></td>--%>
+      <%--<td><form:input path="postDate" /></td>--%>
+    <%--</tr>--%>
     <tr>
       <td colspan="2">
         <input type="submit" value="Submit"/>

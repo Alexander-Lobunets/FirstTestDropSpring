@@ -1,5 +1,7 @@
 package com.springapp.mvc;
 
+import java.util.Date;
+
 /**
  * Created by alobunets on 12/9/2014.
  */
@@ -8,6 +10,11 @@ public class Post {
     private String body;
     private String username;
     private String postDate;
+
+    Post(){
+        Date date = new Date();
+        this.postDate = date.toString();
+    }
 
     public String getUsername() {
         return username;
@@ -38,7 +45,8 @@ public class Post {
         return postDate;
     }
 
-    public void setPostDate(String postDate) {
-        this.postDate = postDate;
-    }
+//    public void setPostDate() {
+//        Date date = new Date();
+//        this.postDate = date.toString();
+//    }
 }
