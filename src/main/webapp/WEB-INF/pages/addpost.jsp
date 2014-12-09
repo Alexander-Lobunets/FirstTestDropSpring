@@ -13,7 +13,7 @@
 </head>
 <body>
 <h2>Post Information</h2>
-<form:form method="POST" action="/SpringMVC/addPost">
+<form:form method="POST" action="/SpringMVC/result">
   <table>
     <tr>
       <td><form:label path="title">Name</form:label></td>

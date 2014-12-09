@@ -24,7 +24,6 @@ public class Post extends Record{
         this.attachments = attachments;
     }
 
-
     public String getTitle() {
         return title;
     }
