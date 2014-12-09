@@ -11,37 +11,30 @@ import javax.annotation.PostConstruct;
 
 @Controller
 
-	 public class BlogController {
+public class BlogController {
 
-//		private Blog blog;
-//
-//		@Autowired
-//		public BlogController (Blog blog) {
-//			this.blog = blog;
-//		}
-		private Blog blog;
+	private Blog blog;
 
+	@PostConstruct
+	public void init() {
+		blog = new Blog();
+		blog.setRecords();
+	}
 
-		@PostConstruct
-		public void init() {
-			blog = new Blog();
-			blog.setRecords();
-		}
-
-		@RequestMapping(value ="/addpost", method = RequestMethod.GET)
-		public ModelAndView post() {
+	@RequestMapping(value ="/addpost", method = RequestMethod.GET)
+	public ModelAndView post() {
 			return new ModelAndView("addpost", "command", new Post());
 		}
 
-		@RequestMapping(value ="/result", method = RequestMethod.POST)
-		public String addPost(@ModelAttribute("SpringWeb")Post post,
-							  ModelMap model) {
-			model.addAttribute("title", post.getTitle());
-			model.addAttribute("body", post.getBody());
-			model.addAttribute("username", post.getUsername());
-			model.addAttribute("postdate", post.getRecordDate());
-			blog.addRecord(post);
-			return "result";
-		}
+	@RequestMapping(value ="/result", method = RequestMethod.POST)
+	public String addPost(@ModelAttribute("SpringWeb")Post post,
+				  ModelMap model) {
+		model.addAttribute("title", post.getTitle());
+		model.addAttribute("body", post.getBody());
+		model.addAttribute("username", post.getUsername());
+		model.addAttribute("postdate", post.getRecordDate());
+		blog.addRecord(post);
+		return "result";
+	}
 
 }
