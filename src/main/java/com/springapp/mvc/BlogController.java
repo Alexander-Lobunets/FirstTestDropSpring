@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 			model.addAttribute("title", post.getTitle());
 			model.addAttribute("body", post.getBody());
 			model.addAttribute("username", post.getUsername());
-			model.addAttribute("postdate", post.getPostDate());
+			model.addAttribute("postdate", post.getRecordDate());
 			return "result";
 		}
 

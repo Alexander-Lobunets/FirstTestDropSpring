@@ -1,28 +1,29 @@
 package com.springapp.mvc;
 
-import java.util.Date;
+import java.util.List;
 
 /**
  * Created by alobunets on 12/9/2014.
  */
-public class Post {
+public class Post extends Record{
     private String title;
-    private String body;
-    private String username;
-    private String postDate;
+    private List<Comment> comments; // comments list
+    private List<Attachment> attachments;
+//    List<Object> objects;
 
     Post(){
-        Date date = new Date();
-        this.postDate = date.toString();
+        setCurrentDate();
     }
 
-    public String getUsername() {
-        return username;
+
+    public List<Attachment> getAttachments() {
+        return attachments;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void addAttachment(List<Attachment> attachments) {
+        this.attachments = attachments;
     }
+
 
     public String getTitle() {
         return title;
@@ -32,21 +33,4 @@ public class Post {
         this.title = title;
     }
 
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-
-    public String getPostDate() {
-        return postDate;
-    }
-
-//    public void setPostDate() {
-//        Date date = new Date();
-//        this.postDate = date.toString();
-//    }
 }
